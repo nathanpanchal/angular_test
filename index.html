@@ -10,13 +10,19 @@
         <div ng-hide="product.soldOut">
             <h1>{{product.name}}</h1>
             <h2>{{product.price | currency}}</h2>
-            <p>{{product.description}}</p>
             <button ng-show="product.canPurchase">Add to Cart</button>
-            <section>
+            <!-- Product Details Section-->
+            <section ng-init="tab = 1">
                 <ul class="nav nav-pills">
-                    <li><a href="" ng-click="tab = 1">Desc</a></li>
-                    <li><a href="" ng-click="tab = 2">Specs</a></li>
-                    <li><a href="" ng-click="tab = 3">Reviews</a></li>
+                    <li ng-class="{active:tab === 1}">
+                        <a href="" ng-click="tab = 1">Desc</a>
+                    </li>
+                    <li ng-class="{active:tab === 2}">
+                        <a href="" ng-click="tab = 2">Specs</a>
+                    </li>
+                    <li ng-class="{active:tab === 3}">
+                        <a href="" ng-click="tab = 3">Reviews</a>
+                    </li>
                 </ul>
                 <div class="panel" ng-show="tab === 1">
                     <h4>Description</h4>
